@@ -1,0 +1,68 @@
+{
+    "model": {
+        "latent_dim": 128,
+        "num_attractors": 10,
+        "gravity_strength": 0.001,
+        "damping": 0.95,
+        "num_iterations": 50
+    },
+    
+    "training": {
+        "batch_size": 32,
+        "num_epochs": 100,
+        "learning_rate": 0.001,
+        "min_lr": 1e-6,
+        "optimizer": "adamw",
+        "weight_decay": 0.01,
+        "grad_clip": 1.0,
+        "early_stopping_patience": 10,
+        "checkpoint_interval": 10
+    },
+    
+    "loss": {
+        "reconstruction_weight": 1.0,
+        "gravitational_weight": 0.1,
+        "contrastive_weight": 0.1,
+        "compression_weight": 0.01
+    },
+    
+    "data": {
+        "dataset_path": "data/multimodal_dataset",
+        "train_split": 0.8,
+        "val_split": 0.1,
+        "test_split": 0.1,
+        "num_workers": 4,
+        "pin_memory": true,
+        "modalities": ["text", "image", "audio"],
+        "augmentation": {
+            "text": {
+                "random_deletion": 0.1,
+                "random_swap": 0.1
+            },
+            "image": {
+                "random_crop": true,
+                "color_jitter": 0.2,
+                "horizontal_flip": 0.5
+            },
+            "audio": {
+                "time_stretch": 0.2,
+                "pitch_shift": 2,
+                "add_noise": 0.1
+            }
+        }
+    },
+    
+    "experiment": {
+        "name": "gda_multimodal_v1",
+        "seed": 42,
+        "use_wandb": true,
+        "save_dir": "checkpoints/gda_multimodal_v1",
+        "log_interval": 100
+    },
+    
+    "hardware": {
+        "mixed_precision": true,
+        "gradient_accumulation_steps": 1,
+        "distributed": false
+    }
+}
