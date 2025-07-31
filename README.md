@@ -34,6 +34,20 @@ The **Gravitational Data Attractor (GDA)** is a breakthrough AI architecture tha
 ### Revolutionary Innovation
 GDA creates "attractor fields" in latent space that enable **sub-millisecond inference** and **<1,000 parameter reasoning** on CPU, outperforming models thousands of times larger.
 
+## 📸 GDA in Action (Demo Output)
+
+### Semantic Compression
+
+![Text Processing Demo](docs/text_processing.png)
+
+### Attractor Field Comparison
+
+![Attractor Comparison](docs/attractor_comparison.png)
+
+### Model Specs (Minimal Version)
+
+![Model Info](docs/model_info.png)
+
 ### Key Achievements
 - ⚡ **Sub-millisecond inference on CPU** - 10-100x faster than traditional transformers
 - 🎯 **<1,000 parameters** - Extreme efficiency without sacrificing capability  
